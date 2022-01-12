@@ -1,5 +1,5 @@
 import expressLoader from './express';
-import dependencyInjectorLoder from './dependencyInjector';
+import dependencyInjectorLoder from './dependency-injector';
 import databaseLoader from './database';
 import Logger from './logger';
 import { User } from '@src/entities/user.entity';

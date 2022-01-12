@@ -12,8 +12,8 @@ import {
   BadRequestException,
   GenericException,
   UnauthorizedException,
-} from '@src/utils/custom-error';
-import { convertDto, generateAvatar } from '@src/utils/common';
+} from '@src/config/custom-error.config';
+import { convertDto, generateAvatar } from '@src/utils/common.util';
 
 @Service()
 export default class AuthService {

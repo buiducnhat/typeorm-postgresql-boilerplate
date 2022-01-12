@@ -2,7 +2,7 @@ import { Request } from 'express';
 import jwt from 'express-jwt';
 
 import config from '@src/config';
-import { UnauthorizedException } from '@src/utils/custom-error';
+import { UnauthorizedException } from '@src/config/custom-error';
 
 /**
  * We are assuming that the JWT will come in a header with the form

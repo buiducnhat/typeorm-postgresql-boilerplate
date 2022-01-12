@@ -5,7 +5,7 @@ import { Repository } from 'typeorm';
 
 import {} from '@src/types/express';
 import { User } from '@src/entities/user.entity';
-import { UnauthorizedException } from '@src/utils/custom-error';
+import { UnauthorizedException } from '@src/config/custom-error.config';
 
 const attachCurrentUser = async (req: Request, res: Response, next: NextFunction) => {
   try {

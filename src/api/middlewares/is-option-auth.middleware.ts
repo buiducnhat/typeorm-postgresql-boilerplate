@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import jwt, { JsonWebTokenError } from 'jsonwebtoken';
 
 import config from '@src/config';
-import { GenericException } from '@src/utils/custom-error';
+import { GenericException } from '@src/config/custom-error';
 
 const isOptionalAuth = (req: Request, res: Response, next: NextFunction) => {
   try {

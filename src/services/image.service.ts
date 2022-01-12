@@ -2,7 +2,7 @@ import { Service } from 'typedi';
 import fs from 'fs';
 import { v2 as cloudinary } from 'cloudinary';
 
-import { GenericException } from '@src/utils/custom-error';
+import { GenericException } from '@src/config/custom-error';
 import config from '@src/config';
 
 @Service()
