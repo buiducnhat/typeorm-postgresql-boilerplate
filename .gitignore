@@ -1,0 +1,25 @@
+# IDE configuration
+.idea
+.vscode
+
+# Dependencies
+node_modules
+
+# Built source code
+build
+dist
+
+# Temporary files and folders
+tmp
+temp
+
+# Environment file
+.env
+
+# Logs
+logs/
+log
+npm-debug.log
+
+# OS file
+.DS_Store

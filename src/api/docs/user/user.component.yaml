@@ -1,0 +1,36 @@
+components:
+  schemas:
+    UserBasicDto:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: Doe
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+          example: '0949494949'
+        avatar:
+          type: string
+          example: https://i.imgur.com/Bb5j7UY.jpg
+        role:
+          type: string
+          enum:
+            - Admin
+            - Member
+          example: Member
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+

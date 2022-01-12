@@ -1,0 +1,79 @@
+components:
+  schemas:
+    BadRequestDto:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 400
+        message:
+          type: string
+          example: Bad request
+        error:
+          type: string
+          example: BAD_REQUEST
+
+    UnauthorizedDto:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 401
+        message:
+          type: string
+          example: Invalid token
+        error:
+          type: string
+          example: UNAUTHORIZED
+
+    ForbiddenDto:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 403
+        message:
+          type: string
+          example: Do not have enough permission
+        error:
+          type: string
+          example: FORBIDDEN
+
+    NotFoundDto:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 404
+        message:
+          type: string
+          example: Resource not found
+        error:
+          type: string
+          example: NOT_FOUND
+
+    ConflictDto:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 409
+        message:
+          type: string
+          example: Conflict input
+        error:
+          type: string
+          example: CONFLICT
+
+    GenericErrorDto:
+      type: object
+      properties:
+        statusCode:
+          type: number
+          example: 500
+        message:
+          type: string
+          example: Server error
+        error:
+          type: string
+          example: GENERIC
