@@ -18,8 +18,11 @@ export class Social {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: true })
-  providerId?: string;
+  @Column()
+  socialId: string;
+
+  @Column({ type: 'enum', enum: SocialProvider })
+  provider: SocialProvider;
 
   @Column({ nullable: true })
   firstName?: string;
