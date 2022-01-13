@@ -105,7 +105,7 @@ export default class AuthService {
     const jwtAlgorithm = config.jwtAlgorithm;
     return jwt.sign(
       {
-        id: user.id,
+        userId: user.id,
       },
       config.jwtSecret,
       {

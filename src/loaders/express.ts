@@ -2,7 +2,6 @@ import * as express from 'express';
 import { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import { isCelebrateError, CelebrateError } from 'celebrate';
-import { UnauthorizedError as JwtUnauthorizedError } from 'express-jwt';
 
 import config from '@src/config';
 import apiRoutes from '@src/api';
@@ -82,7 +81,7 @@ export default ({ app }: { app: express.Application }) => {
 
   // Handle 401 Authorization Error (thrown by express-jwt or custom)
   app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    if (err instanceof JwtUnauthorizedError || UnauthorizedException) {
+    if (err instanceof UnauthorizedException) {
       const code = HttpCode.UNAUTHORIZED;
       LoggerInstance.error(
         `[${HttpStatus.UNAUTHORIZED}/${err.name || 'Authorization'}] - ${code} - ${err.message}`,

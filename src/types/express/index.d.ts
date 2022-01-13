@@ -6,7 +6,7 @@ declare global {
       token: {
         id: number | string;
       };
-      currentUser: Omit<UserEntity, 'password' | 'salt'>;
+      currentUser: Partial<UserEntity>;
       hasPermission: boolean;
     }
   }
