@@ -7,8 +7,8 @@ import { UnauthorizedException } from '@src/config/custom-error.config';
 
 const options: StrategyOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: config.jwtSecret,
-  algorithms: [config.jwtAlgorithm],
+  secretOrKey: config.jwt.jwtSecret,
+  algorithms: [config.jwt.jwtAlgorithm],
 };
 
 export const jwtStrategy = new Strategy(options, async (payload, done) => {

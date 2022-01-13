@@ -102,15 +102,15 @@ export default class AuthService {
   }
 
   private generateToken(user: User, isLongExpire = false) {
-    const jwtAlgorithm = config.jwtAlgorithm;
+    const jwtAlgorithm = config.jwt.jwtAlgorithm;
     return jwt.sign(
       {
         userId: user.id,
       },
-      config.jwtSecret,
+      config.jwt.jwtSecret,
       {
         algorithm: jwtAlgorithm,
-        expiresIn: isLongExpire ? config.jwtExpireTimeLong : config.jwtExpireTimeNormal,
+        expiresIn: isLongExpire ? config.jwt.jwtExpireTimeLong : config.jwt.jwtExpireTimeNormal,
       },
     );
   }

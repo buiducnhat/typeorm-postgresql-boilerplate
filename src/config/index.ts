@@ -20,10 +20,20 @@ export default {
   /**
    * Your secret sauce
    */
-  jwtSecret: process.env.JWT_SECRET,
-  jwtAlgorithm: 'HS256' as IJWTAlgorithm,
-  jwtExpireTimeNormal: process.env.JWT_EXPIRE_NORMAL,
-  jwtExpireTimeLong: process.env.JWT_EXPIRE_LONG,
+  jwt: {
+    jwtSecret: process.env.JWT_SECRET,
+    jwtAlgorithm: 'HS256' as IJWTAlgorithm,
+    jwtExpireTimeNormal: process.env.JWT_EXPIRE_NORMAL,
+    jwtExpireTimeLong: process.env.JWT_EXPIRE_LONG,
+  },
+
+  /**
+   * Google cloud key
+   */
+  google: {
+    clientId: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  },
 
   /**
    * Database config
