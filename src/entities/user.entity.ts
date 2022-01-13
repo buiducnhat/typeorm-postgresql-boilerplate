@@ -4,7 +4,9 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
+import { Social } from './social.entity';
 
 export enum UserRole {
   ADMIN = 'Admin',
@@ -22,14 +24,14 @@ export class User {
   @Column({ length: 50 })
   lastName: string;
 
-  @Column()
-  avatar: string;
+  @Column({ nullable: true })
+  avatar?: string;
 
-  @Column({ length: 255 })
+  @Column()
   email: string;
 
-  @Column({ length: 15 })
-  phone: string;
+  @Column({ length: 15, nullable: true })
+  phone?: string;
 
   @Column({ type: 'enum', enum: UserRole, default: UserRole.MEMBER })
   role: UserRole;
@@ -39,6 +41,9 @@ export class User {
 
   @Column()
   salt: string;
+
+  @OneToMany(() => Social, social => social.user)
+  socials?: Social[];
 
   @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP(6)' })
   createdAt: Date;

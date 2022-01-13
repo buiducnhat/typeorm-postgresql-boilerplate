@@ -3,6 +3,7 @@ import dependencyInjectorLoder from './dependency-injector';
 import databaseLoader from './database';
 import Logger from './logger';
 import { User } from '@src/entities/user.entity';
+import { Social } from '@src/entities/social.entity';
 
 export default async ({ expressApp }) => {
   const runMode = process.env.NODE_ENV;
@@ -12,7 +13,7 @@ export default async ({ expressApp }) => {
   Logger.info('✅ DB loaded and connected!');
 
   await dependencyInjectorLoder({
-    repositories: [User].map(e => ({
+    repositories: [User, Social].map(e => ({
       name: e.name.charAt(0).toLowerCase() + e.name.slice(1) + 'Repository',
       repository: connection.manager.getRepository(e),
     })),
