@@ -1,11 +1,12 @@
 import { User } from '@src/entities/user.entity';
 
 export interface CreateUserDto {
+  username: string;
   firstName: string;
   lastName: string;
-  email: string;
-  phone: string;
-  avatar: string;
+  email?: string;
+  phone?: string;
+  avatar?: string;
   password: string;
 }
 

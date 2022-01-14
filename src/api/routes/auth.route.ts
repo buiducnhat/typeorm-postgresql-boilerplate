@@ -4,6 +4,7 @@ import Container from 'typedi';
 import authValidators from '@src/api/middlewares/validators/auth.validator';
 import AuthService from '@src/services/auth.service';
 import { CreateUserDto } from '@src/dto/user.dto';
+import passport from '@src/api/passport';
 
 const route = Router();
 
@@ -36,6 +37,16 @@ export default (app: Router) => {
       } catch (err) {
         next(err);
       }
+    },
+  );
+
+  route.get('/google', passport.authenticate('google'));
+
+  route.get(
+    '/google/redirect',
+    passport.authenticate('google', { session: false }),
+    (req: Request, res: Response) => {
+      res.status(200).json(req.user);
     },
   );
 };
