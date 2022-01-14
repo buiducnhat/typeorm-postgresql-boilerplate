@@ -49,4 +49,14 @@ export default (app: Router) => {
       res.status(200).json(req.user);
     },
   );
+
+  route.get('/facebook', passport.authenticate('facebook', { scope: ['email'] }));
+
+  route.get(
+    '/facebook/redirect',
+    passport.authenticate('facebook', { session: false }),
+    (req: Request, res: Response) => {
+      res.status(200).json(req.user);
+    },
+  );
 };

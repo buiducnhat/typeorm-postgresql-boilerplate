@@ -36,6 +36,14 @@ export default {
   },
 
   /**
+   * Facebook key
+   */
+  facebook: {
+    appId: process.env.FACEBOOK_APP_ID,
+    secretKey: process.env.FACEBOOK_SECRET_KEY,
+  },
+
+  /**
    * Database config
    */
   orm: {
