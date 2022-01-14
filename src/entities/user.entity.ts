@@ -39,10 +39,10 @@ export class User {
   @Column({ type: 'enum', enum: UserRole, default: UserRole.MEMBER })
   role: UserRole;
 
-  @Column()
+  @Column({ nullable: true })
   password: string;
 
-  @Column()
+  @Column({ nullable: true })
   salt: string;
 
   @OneToMany(() => Social, social => social.user)

@@ -39,7 +39,7 @@ export class Social {
   @Column({ nullable: true })
   phone?: string;
 
-  @ManyToOne(() => User, user => user.socials)
+  @ManyToOne(() => User, user => user.socials, { cascade: true })
   user: User;
 
   @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP(6)' })
