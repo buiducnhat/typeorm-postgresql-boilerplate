@@ -30,6 +30,9 @@ export class User {
   @Column()
   email: string;
 
+  @Column({ default: false })
+  isVerifiedEmail: boolean;
+
   @Column({ length: 15, nullable: true })
   phone?: string;
 
